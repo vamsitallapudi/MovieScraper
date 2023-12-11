@@ -139,16 +139,15 @@ USER_AGENTS = [
 
 CUSTOM_HEADERS = {
     'Host': 'in.bookmyshow.com',
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/111.0',
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:120.0) Gecko/20100101 Firefox/120.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
     'Accept-Language': 'en-US,en;q=0.5',
     'Accept-Encoding': 'gzip, deflate, br',
     'Upgrade-Insecure-Requests': '1',
     'Sec-Fetch-Dest': 'document',
     'Sec-Fetch-Mode': 'navigate',
-    'Sec-Fetch-Site': 'cross-site',
-    'Connection': 'keep-alive',
-    'Cookie': '__cf_bm=biUzzgLlMGdpblPnrmyHprbLq_2Uu004_6T_FUTUcQ4-1702215193-1-AXz5K7ngsReP0zl2FTG3Cr3/L4YyyDjSF7u5m8RIYcOgQ8EqpeYMst3+xvBvycNJh9WMVuCu6o9y9hpJlqV+Ic0=; _cfuvid=Wj1LU1ZjJy2HrJ9_x_xNakgwpzn3KB7wE.U0i8xN.t4-1702215193603-0-604800000; preferences=%7B%22ticketType%22%3A%22M-TICKET%22%7D; __cfruid=fcfa02f44a1ab7db8b3327673c4b907fd79ba4fc-1702215197; cf_clearance=FLcOMYylGzmzvaG.2TQjCaaEUh4F9LknxoAX8sprCP4-1702215203-0-1-316f7008.15e42849.3d656d68-0.2.1702215203'
+    'Sec-Fetch-Site': 'same-origin',
+    'Connection': 'keep-alive'
 }
 
 DOWNLOAD_DELAY = 2.5

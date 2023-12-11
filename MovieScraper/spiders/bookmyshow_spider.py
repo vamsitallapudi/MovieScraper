@@ -9,8 +9,7 @@ from MovieScraper.settings import CUSTOM_HEADERS
 class BookMyShowSpider(scrapy.Spider):
     name = 'bookmyshow'
     movie = "Animal"
-    allowed_domains = ['in.bookmyshow.com']
-    url = "https://in.bookmyshow.com/hyderabad/movies/animal/ET00311762"
+    url = "https://in.bookmyshow.com/explore/home/hyderabad"
 
     def start_requests(self):
         print("starting request")

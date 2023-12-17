@@ -8,7 +8,7 @@ from MovieScraper.settings import CUSTOM_HEADERS
 
 class BookMyShowSpider(scrapy.Spider):
     name = 'bookmyshow'
-    movie = "Animal"
+    book_tickets = "Book tickets"
     url = "https://in.bookmyshow.com/explore/home/hyderabad"
 
     def start_requests(self):
@@ -19,11 +19,10 @@ class BookMyShowSpider(scrapy.Spider):
 
     def parse(self, response, **kwargs):
         print(f"Total response from {response}")
-        for movie_selector in response.css('#page-cta-container::text').extract():
+        for movie_selector in response.css('#bGbeea::text').extract():
             item = PaytmScraperItem()
             item['title'] = movie_selector
-            if item.title == 'Animal':
-                print("")
+            if item.title == self.book_tickets:
                 print(f"Book Tickets button for movie {self.movie} enabled. Sending Email")
                 self.send_mail(msg="Hey Vamsi! Movie tickets for Animal are now available")
             yield item

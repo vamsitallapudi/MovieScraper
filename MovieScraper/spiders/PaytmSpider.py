@@ -1,21 +1,18 @@
-import asyncio
 import os
 import smtplib
-import time
 from email.message import EmailMessage
 
-import schedule
 import scrapy
 from dotenv import load_dotenv
-from scrapy import cmdline
 
 from MovieScraper.items import PaytmScraperItem
 
 load_dotenv()
 
+
 class PaytmSpider(scrapy.Spider):
-    name = 'paytm'
-    movie = "Sal"
+    name = 'paytm_spider'
+    movie = "sal"
     allowed_domains = ['paytm.com']
     start_urls = ["https://paytm.com/movies/hyderabad"]
 
@@ -48,23 +45,3 @@ class PaytmSpider(scrapy.Spider):
         print(msg)
         print("Sent")
 
-def crawl_paytm():
-    cmdline.execute("scrapy runspider PaytmSpider.py".split())
-
-# Schedule the spider to run every 10 seconds
-schedule.every(10).seconds.do(crawl_paytm)
-
-# Run the scheduler
-while True:
-    try:
-        schedule.run_pending()
-        time.sleep(1)
-    except KeyboardInterrupt:
-        # Handle keyboard interrupt (e.g., Ctrl+C) to gracefully exit the loop
-        break
-    except Exception as e:
-        # Handle other exceptions to prevent the scheduler from stopping
-        print(f"An error occurred: {e}")
-        import traceback
-        traceback.print_exc()
-        time.sleep(1)
